@@ -15,6 +15,7 @@ namespace Xamarin_Test.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LocationDetailPage : ContentPage
     {
+        Map map;
         LocationDetailViewModel viewModel;
         public LocationDetailPage()
         {
@@ -27,16 +28,43 @@ namespace Xamarin_Test.Views
 
             BindingContext = this.viewModel = viewModel;
 
-            /*var map = new Map(
-            MapSpan.FromCenterAndRadius(
-                    new Position(37, -122), Distance.FromMiles(0.3)))
+            map = new Map
             {
                 IsShowingUser = true,
-                HeightRequest = 100,
+                HeightRequest = 400,
                 WidthRequest = 960,
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
-            slMain.Children.Add(map);*/
+
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(
+                new Position(-43.905222, 171.744910), Distance.FromMiles(3))); // Santa Cruz golf course
+
+            var position = new Position(-43.905222, 171.744910); // Latitude, Longitude
+            var pin = new Pin
+            {
+                Type = PinType.Place,
+                Position = position,
+                Label = "McDonalds Ashburton",
+                Address = "Cnr West & Moore Streets, Ashburton 7700"
+            };
+            map.Pins.Add(pin);
+            slMain.Children.Add(map);
+            map.MapType = MapType.Street;
+            Button btnTop = new Button();
+            btnTop.Text = "To Top";
+            btnTop.Clicked += BtnTop_Clicked;
+            slMain.Children.Add(btnTop);
         }
+
+        private void BtnTop_Clicked(object sender, EventArgs e)
+        {
+            ScrollUp();
+        }
+
+        public async void ScrollUp()
+        {
+            await svMain.ScrollToAsync(0, 0, true);
+        }
+
     }
 }

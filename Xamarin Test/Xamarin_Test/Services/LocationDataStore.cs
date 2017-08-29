@@ -78,12 +78,12 @@ namespace Xamarin_Test.Services
             locations = new List<Location>();
             var _locations = new List<Location>
             {
-                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Ashburton", AddressLine1 = "Ashburton McDonalds", AddressLine2 = "", DayOfWeek = "Tuesday", Time= "7pm", Facilitator = "Regan Davis", FacilitatorPhone = "02040151245"},
-                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Bromley", AddressLine1 = "11B Pateke Place, Bromley", AddressLine2 = "", DayOfWeek = "Wednesday", Time= "7pm", Facilitator = "Phillip Wells", FacilitatorPhone = "02040151245"},
-                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Phillipstown", AddressLine1 = "Phillipstown Community Hub", AddressLine2 = "39 Nursery Road, Phillipstown", DayOfWeek = "Wednesday", Time= "7pm", Facilitator = "Kanohi Vercoe", FacilitatorPhone = "02040151245"},
-                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Aranui", AddressLine1 = "Te Rawhiti Family Care", AddressLine2 = "50 Portsmouth st", DayOfWeek = "Wednesday", Time= "7pm", Facilitator = "Ben Robertson", FacilitatorPhone = "02040151245"},
-                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Rangiora", AddressLine1 = "Rangiora War Memorial Hall", AddressLine2 = "24 High Street, Rangiora", DayOfWeek = "Wednesday", Time= "7pm", Facilitator = "Zane Tait", FacilitatorPhone = "02040151245"},
-                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Hornby", AddressLine1 = "Hornby Rugby Club", DayOfWeek = "Tuesday", Time= "7:30pm", Facilitator = "Mike Garth", FacilitatorPhone = "02040151245"},
+                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Ashburton", AddressLine1 = "Ashburton McDonalds", AddressLine2 = "Cnr West & Moore Streets, Ashburton 7700", DayOfWeek = "Tuesday", Time= "7pm", Facilitator = "Regan Davis", FacilitatorPhone = ""},
+                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Bromley", AddressLine1 = "11B Pateke Place, Bromley", AddressLine2 = "", DayOfWeek = "Wednesday", Time= "7pm", Facilitator = "Zane Tait", FacilitatorPhone = ""},
+                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Phillipstown", AddressLine1 = "Phillipstown Community Hub", AddressLine2 = "39 Nursery Road, Phillipstown", DayOfWeek = "Wednesday", Time= "7pm", Facilitator = "Kanohi Vercoe", FacilitatorPhone = ""},
+                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Aranui", AddressLine1 = "Te Rawhiti Family Care", AddressLine2 = "50 Portsmouth st", DayOfWeek = "Wednesday", Time= "7pm", Facilitator = "Ben Robertson", FacilitatorPhone = ""},
+                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Rangiora", AddressLine1 = "Rangiora War Memorial Hall", AddressLine2 = "24 High Street, Rangiora", DayOfWeek = "Wednesday", Time= "7pm", Facilitator = "Derek Tait", FacilitatorPhone = ""},
+                new Location { Id = Guid.NewGuid().ToString(), LocationName = "Hornby", AddressLine1 = "Hornby Rugby Club", DayOfWeek = "Tuesday", Time= "7:30pm", Facilitator = "Mike Garth", FacilitatorPhone = ""},
             };
 
             foreach (Location location in _locations)

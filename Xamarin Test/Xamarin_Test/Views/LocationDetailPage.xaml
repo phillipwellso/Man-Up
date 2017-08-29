@@ -4,7 +4,7 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="Xamarin_Test.Views.LocationDetailPage"
              Title="{Binding Title}">
-    <ScrollView x:Name="svMain">
+    <ScrollView x:Name="svMain" InputTransparent="True">
         <StackLayout Spacing="20" Padding="15" x:Name="slMain">
             <Label Text="Main Details:" FontSize="Medium"/>
             <Grid x:Name="MainDetails">
