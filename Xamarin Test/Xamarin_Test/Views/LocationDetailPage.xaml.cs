@@ -36,9 +36,10 @@ namespace Xamarin_Test.Views
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(
-                new Position(-43.905222, 171.744910), Distance.FromMiles(3))); // Santa Cruz golf course
-
+            //map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(-43.905222, 171.744910), Distance.FromMiles(3))); // Santa Cruz golf course
+            var zoomLevel = 16; // pick a value between 1 and 18
+            var latlongdeg = 360 / (Math.Pow(2, zoomLevel));
+            map.MoveToRegion(new MapSpan(new Position(-43.905222, 171.744910), latlongdeg, latlongdeg)); // Santa Cruz golf course
             var position = new Position(-43.905222, 171.744910); // Latitude, Longitude
             var pin = new Pin
             {
