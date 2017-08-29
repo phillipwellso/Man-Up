@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Test.Views.HomePage"
+             xmlns:vm="clr-namespace:Xamarin_Test.ViewModels;"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Man Up Canterbury" FontSize="Large"/>
+            <Label Text="Man Up is an organisation aimed at providing support to men from all walks of life" FontSize="Small"/>
+            <Label Text="We have multiple locations throughout the canterbury region. So find the closest one to you today" FontSize="Small"/>
+            <Label Text="We help men to deal with: Drugs, Alcohol, Domestic Violence, Suicide, Abuse, Molestation, Distrust, Jealousy, Confidence Issues and many more" FontSize="Small"/>
+            <Button Margin="0,10,0,0"
+                Text="Learn More" 
+                Command="{Binding OpenWebCommand}"
+                BackgroundColor="{StaticResource Secondary}"
+                TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

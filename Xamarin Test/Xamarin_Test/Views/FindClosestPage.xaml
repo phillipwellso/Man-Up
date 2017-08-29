@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Test.Views.FindClosestPage"
+             xmlns:vm="clr-namespace:Xamarin_Test.ViewModels;"
+             Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:FindClosestViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Find Closest" FontSize="Large"/>
+            <Label Text="Map will display here" FontSize="Small"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
