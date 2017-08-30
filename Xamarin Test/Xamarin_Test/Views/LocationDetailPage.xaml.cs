@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using Xamarin_Test.ViewModels;
 using Xamarin_Test.Views;
 using Xamarin.Forms.Maps;
+using Xamarin_Test.Models;
 
 namespace Xamarin_Test.Views
 {
@@ -30,35 +31,43 @@ namespace Xamarin_Test.Views
 
             BindingContext = this.viewModel = viewModel;
 
-            geoCoder = new Geocoder();
-
-            map = new Map
+            if (viewModel.Item.Coords.Length == 2)
             {
-                IsShowingUser = true,
-                HeightRequest = 400,
-                WidthRequest = 960,
-                VerticalOptions = LayoutOptions.FillAndExpand
-            };
+                geoCoder = new Geocoder();
 
+                map = new Map
+                {
+                    IsShowingUser = true,
+                    HeightRequest = 400,
+                    WidthRequest = 960,
+                    VerticalOptions = LayoutOptions.FillAndExpand
+                };
 
-            //map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(-43.905222, 171.744910), Distance.FromMiles(3))); // Santa Cruz golf course
-            var zoomLevel = 16; // pick a value between 1 and 18
-            var latlongdeg = 360 / (Math.Pow(2, zoomLevel));
-            //map.MoveToRegion(new MapSpan(new Position(-43.905222, 171.744910), latlongdeg, latlongdeg)); // Santa Cruz golf course
-            //var position = new Position(-43.905222, 171.744910); // Latitude, Longitude
-            //SetMap();
-            map.MoveToRegion(new MapSpan(new Position(-43.534652, 172.684720), latlongdeg, latlongdeg)); // Santa Cruz golf course
-            var position = new Position(-43.534652, 172.684720); // Latitude, Longitude
-            var pin = new Pin
+                var zoomLevel = 16; // pick a value between 1 and 18
+                var latlongdeg = 360 / (Math.Pow(2, zoomLevel));
+                //SetMap();
+                map.MoveToRegion(new MapSpan(new Position(viewModel.Item.Coords[0], viewModel.Item.Coords[1]), latlongdeg, latlongdeg)); // Santa Cruz golf course
+                var position = new Position(viewModel.Item.Coords[0], viewModel.Item.Coords[1]); // Latitude, Longitude
+                var pin = new Pin
+                {
+                    Type = PinType.Place,
+                    Position = position,
+                    Label = "McDonalds Ashburton",
+                    Address = "Cnr West & Moore Streets, Ashburton 7700"
+                };
+                map.MapType = MapType.Street;
+                map.Pins.Add(pin);
+                slMain.Children.Add(map);
+            }
+            else
             {
-                Type = PinType.Place,
-                Position = position,
-                Label = "McDonalds Ashburton",
-                Address = "Cnr West & Moore Streets, Ashburton 7700"
-            };
-            map.Pins.Add(pin);
-            slMain.Children.Add(map);
-            map.MapType = MapType.Street;
+                Label lblError = new Label();
+                lblError.Text = "No Map Data Exists for Location";
+                lblError.FontAttributes = FontAttributes.Bold;
+                lblError.FontSize = 20;
+                slMain.Children.Add(lblError);
+            }
+           
             Button btnTop = new Button();
             btnTop.Text = "To Top";
             btnTop.Clicked += BtnTop_Clicked;

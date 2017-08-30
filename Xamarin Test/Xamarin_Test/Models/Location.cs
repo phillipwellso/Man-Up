@@ -1,4 +1,6 @@
-﻿namespace Xamarin_Test.Models
+﻿using System;
+
+namespace Xamarin_Test.Models
 {
     public class Location : BaseDataObject
     {
@@ -49,5 +51,13 @@
             get { return facilitatorPhone; }
             set { SetProperty(ref facilitatorPhone, value); }
         }
+
+        double[] coords = { };
+        public double[] Coords
+        {
+            get { return coords; }
+            set { SetProperty(ref coords, value); }
+        }
+
     }
 }
