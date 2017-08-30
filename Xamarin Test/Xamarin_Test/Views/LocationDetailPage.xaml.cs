@@ -62,7 +62,7 @@ namespace Xamarin_Test.Views
             else
             {
                 Label lblError = new Label();
-                lblError.Text = "No Map Data Exists for Location";
+                lblError.Text = Environment.NewLine + "No Map Data Exists for Location" + Environment.NewLine;
                 lblError.FontAttributes = FontAttributes.Bold;
                 lblError.FontSize = 20;
                 slMain.Children.Add(lblError);

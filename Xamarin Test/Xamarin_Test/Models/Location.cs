@@ -59,5 +59,19 @@ namespace Xamarin_Test.Models
             set { SetProperty(ref coords, value); }
         }
 
+        string mapLocationName = "";
+        public string MapLocationName
+        {
+            get { return mapLocationName; }
+            set { SetProperty(ref mapLocationName, value); }
+        }
+
+        string mapAddress = "";
+        public string MapAddress
+        {
+            get { return mapAddress; }
+            set { SetProperty(ref mapAddress, value); }
+        }
+
     }
 }
