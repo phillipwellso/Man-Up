@@ -4,7 +4,8 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="Xamarin_Test.Views.LocationDetailPage"
              Title="{Binding Title}">
-    <ScrollView x:Name="svMain" InputTransparent="True">
+    <ContentView>
+        <ScrollView x:Name="svMain" VerticalOptions="FillAndExpand" Orientation="Vertical">
         <StackLayout Spacing="20" Padding="15" x:Name="slMain">
             <Label Text="Main Details:" FontSize="Medium"/>
             <Grid x:Name="MainDetails">
@@ -32,23 +33,20 @@
                 <Label Grid.Row="4" Grid.Column="1" Text="{Binding Item.Time}" FontSize="Small"/>
             </Grid>
             <Label Text="Facilitator Details:" FontSize="Medium"/>
-            <Grid x:Name="FacilitatorDetails">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="Facilitated By: " FontSize="Small"/>
-                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Item.Facilitator}" FontSize="Small"/>
-                <Label Grid.Row="1" Grid.Column="0" Text="Phone Number:" FontSize="Small"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Item.FacilitatorPhone}" FontSize="Small"/>
-            </Grid>
-            <!--<maps:Map WidthRequest="320" HeightRequest="200"
-            x:Name="MyMap" 
-            IsShowingUser="true"
-            MapType="Hybrid"/>-->
-        </StackLayout>
+                <Grid x:Name="FacilitatorDetails">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Facilitated By: " FontSize="Small"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Item.Facilitator}" FontSize="Small"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Phone Number:" FontSize="Small"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Item.FacilitatorPhone}" FontSize="Small"/>
+                </Grid>
+            </StackLayout>
     </ScrollView>
+    </ContentView>
 </ContentPage>

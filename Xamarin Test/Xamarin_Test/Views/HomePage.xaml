@@ -7,8 +7,12 @@
     <ContentPage.BindingContext>
         <vm:HomeViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Item" Clicked="OnAlertYesNoClicked" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
+            <Image Source="man_up_logo.png"></Image>
             <Label Text="Man Up Canterbury" FontSize="Large"/>
             <Label Text="Man Up is an organisation aimed at providing support to men from all walks of life" FontSize="Small"/>
             <Label Text="We have multiple locations throughout the canterbury region. So find the closest one to you today" FontSize="Small"/>

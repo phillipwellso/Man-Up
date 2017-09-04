@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>Xamarin_Test.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.Xamarin_Test</string>
+	<string>com.companyname.Xamarin-Test</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -41,8 +41,12 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
-    <string>Can we use your location</string>
-<key>NSLocationWhenInUseUsageDescription</key>
-    <string>We are using your location</string>
+	<string>Can we use your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We are using your location</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>

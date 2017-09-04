@@ -29,6 +29,7 @@ namespace Xamarin_Test.Views
         {
             InitializeComponent();
 
+            svMain.InputTransparent = Device.OnPlatform(false,true,false);
             BindingContext = this.viewModel = viewModel;
 
             if (viewModel.Item.Coords.Length == 2)
